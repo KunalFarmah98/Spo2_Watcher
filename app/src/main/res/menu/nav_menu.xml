@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group
+        android:id="@+id/menu_top"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_vital_signs"
+            android:icon="@drawable/vital_icon"
+            android:orderInCategory="100"
+            android:title="Measure Vital Signs"
+
+            app:showAsAction="never" />
+
+        <item
+             android:id="@+id/nav_consult"
+             android:icon="@drawable/consult_icon"
+             android:orderInCategory="100"
+             android:title="Consult a Doctor"
+             app:showAsAction="never" />
+        <item
+            android:id="@+id/nav_abt_vitals"
+            android:icon="@drawable/baseline_info_white_36"
+            android:orderInCategory="100"
+            android:title="Covid-19 and SPO2"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/baseline_help_outline_white_36"
+            android:orderInCategory="100"
+            android:title="Covid-19 Help"
+            app:showAsAction="never" />
+    </group>
+
+    <group
+        android:id="@+id/menu_mid"
+        android:checkableBehavior="single">
+           <item
+               android:id="@+id/nav_my_appoints"
+               android:icon="@drawable/ic_appointment"
+               android:orderInCategory="100"
+               android:title="My Appointments"
+               app:showAsAction="never" />
+         <item
+             android:id="@+id/nav_my_chats"
+             android:icon="@drawable/ic_chat_black_24dp"
+             android:orderInCategory="100"
+             android:title="My Chats"
+             app:showAsAction="never" />
+        <item
+            android:id="@+id/nav_my_results"
+            android:icon="@drawable/baseline_assignment_white_36"
+            android:orderInCategory="100"
+            android:title="My Reports"
+            app:showAsAction="never" />
+    </group>
+
+    <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/baseline_settings_white_36"
+            android:orderInCategory="100"
+            android:title="Settings"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/baseline_reply_white_36"
+            android:orderInCategory="100"
+            android:title="Logout"
+            app:showAsAction="never" />
+    </group>
+</menu>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group>
+        <item
+            android:id="@+id/action_appointment"
+            android:icon="@drawable/ic_people_outline_black_24dp"
+            android:orderInCategory="100"
+            android:title="Appointments"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/action_chat"
+            android:icon="@drawable/ic_chat_black_24dp"
+            android:orderInCategory="100"
+            android:title="Chat"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/action_my_patients"
+            android:icon="@drawable/ic_people_outline_black_24dp"
+            android:orderInCategory="100"
+            android:title="My Patients"
+            app:showAsAction="never" />
+
+
+    </group>
+
+</menu>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <solid android:color="@color/myMessageColor" />
+
+    <corners android:radius="24dp"
+        android:topLeftRadius="24dp"
+        android:topRightRadius="0dp"
+        android:bottomLeftRadius="24dp"
+        android:bottomRightRadius="24dp"/>
+</shape>

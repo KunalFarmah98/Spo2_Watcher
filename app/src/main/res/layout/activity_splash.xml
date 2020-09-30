@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".SplashActivity">
+
+    <ImageView
+        android:id="@+id/img1"
+        android:layout_margin="10dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/bp_icon"/>
+
+    <ImageView
+        android:id="@+id/img2"
+        android:layout_margin="10dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/heartrate_icon"/>
+
+    <ImageView
+        android:id="@+id/img3"
+        android:layout_margin="10dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/oxygen_sat_icon"/>
+
+    <ImageView
+        android:id="@+id/img4"
+        android:layout_margin="10dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/respiratory_rate_icon"/>
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:layout_marginHorizontal="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="200dp"
+        style="@style/Base.TextAppearance.AppCompat.Headline"
+        android:textSize="35sp"
+        android:layout_centerInParent="true"
+        android:textAlignment="center"
+        android:text="@string/app_name"/>
+
+    <TextView
+        android:id="@+id/tv2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="75dp"
+        android:layout_below="@id/tv1"
+        style="@style/Base.TextAppearance.AppCompat.Headline"
+    android:textSize="35sp"
+    android:layout_centerInParent="true"
+        android:textAlignment="center"
+    android:text="A PPG based Oxymeter \nand Heart Rate \nSensor"/>
+
+</RelativeLayout>

@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Spo2 Watcher</string>
+    <string name="action_settings">Settings</string>
+    <string name="finger_instructions">- Lightly place your index finger on the rear camera.\n- Make sure the camera is fully covered.\n- Measure in a shaded environment.\n- Don\'t move your finger until the measurement is complete.\n- Finally place your finger then press start.</string>
+    <string name="bp">Blood pressure (BP) is the pressure of circulating blood on the walls of blood vessels.
+        \nBlood pressure is usually expressed in terms of the systolic pressure (maximum during one heartbeat) over diastolic pressure (minimum in between two heartbeats)
+        and is measured in millimeters of mercury (mmHg), above the surrounding atmospheric pressure.
+    </string>
+
+    <string name="hr">Heart rate is the speed of the heartbeat measured by the number of contractions (beats) of the heart per minute (bpm).
+        \n\nThe American Heart Association states the normal resting adult human heart rate is 60–100 bpm.
+        \nTachycardia is a fast heart rate, defined as above 100 bpm at rest.
+        \nBradycardia is a slow heart rate, defined as below 60 bpm at rest.
+    </string>
+
+    <string name="oxy">Oxygen saturation is the fraction of [oxygen]-saturated hemoglobin relative to total hemoglobin (unsaturated + saturated) in the blood. The human body requires and regulates a very precise and specific balance of oxygen in the blood. </string>
+
+    <string name="resp">The respiratory rate is the rate at which breathing occurs. This is usually measured in breaths per minute and is set, and controlled by the respiratory centre.</string>
+    <string name="title_activity_doctor">Health++</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="title_activity_appointment">AppointmentActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="helpline">+91-11-23978046</string>
+    <string name="helpline2">1075</string>
+    <string name="website">https://www.mohfw.gov.in</string>
+    <string name="nearest_response_centers">Region-wise Helpline Numbers</string>
+    <string name="Failed">Measurement Failed. Please don\'t remove your finger before 30 seconds or measure in a darker environment.</string>
+    <string name="Wizard">Measuring your vitals, please don\'t remove your finger from the camera.The process can take upto 30 seconds</string>
+    <string name="measuring">Recording and Measuring</string>
+    <string name="analysing">Analysing</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="warning">Symptom Alert</string>
+    <string name="warning_body">Your Blood Oxygen Levels have been found to be abnormally low that may indicate presence of assymptomatic infection.\nIt is Highly Recommended that you test your vitals again and if the reading persists, contact your nearest covid response centre immediately for a complete test to rule out any possibility of an assymptomatic infection or a reinfection if you are an existing patient.</string>
+
+
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="link">#0826E9</color>
+    <color name="maroon">#b03060</color>
+    <color name="lime">#e4ecbf</color>
+    <color name="lightblue">#b0c4de</color>
+    <color name="pink">#ffb6c1</color>
+    <color name="skin">#ffa07a</color>
+    <color name="dataset_color">#2f4f4f</color>
+    <color name="myMessageColor">#fa8100</color>
+    <color name="otherMessageColor">#ef0078</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="timeColor">#F91795</color>
+</resources>

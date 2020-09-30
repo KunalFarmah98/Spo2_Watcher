@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/appointment_new"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="New Appointments" />
+
+    <item
+        android:id="@+id/appointment_confirmed"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="Comfirmed Appointments" />
+
+
+</menu>

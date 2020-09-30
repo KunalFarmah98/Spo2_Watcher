@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/title"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            android:textSize="28sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Vital Signs"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/vital_signs"
+            android:layout_marginTop="8dp"
+            android:layout_below="@id/title"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Heart Rate"
+                        android:textAlignment="center"
+                        android:textColor="#80000000"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:src="@drawable/heartrate_icon"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/HRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="20 km/hr"
+                        android:textAlignment="center"
+                        android:textColor="#B3000000"
+                        android:textSize="26sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Blood Pressure"
+                        android:textAlignment="center"
+                        android:textColor="#80000000"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:src="@drawable/bp"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/BP2V"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="78%"
+                        android:textAlignment="center"
+                        android:textColor="#B3000000"
+                        android:textSize="26sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Oxygen Saturation"
+                        android:textAlignment="center"
+                        android:textColor="#80000000"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:src="@drawable/oxygen_sat_icon"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/O2V"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="10116 Pa."
+                        android:textAlignment="center"
+                        android:textColor="#B3000000"
+                        android:textSize="26sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:visibility="gone"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Respiration Rate"
+                        android:textAlignment="center"
+                        android:textColor="#80000000"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:src="@drawable/respiratory_rate_icon"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/RRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="78%"
+                        android:textAlignment="center"
+                        android:textColor="#B3000000"
+                        android:textSize="26sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_margin="10dp"
+            android:id="@+id/caution_signs"
+            android:layout_below="@id/vital_signs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+
+
+</ScrollView>
+

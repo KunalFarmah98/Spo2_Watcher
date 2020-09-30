@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutVitalSigns">
+
+    <TextView
+        android:id="@+id/header"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:padding="10dp"
+        style="@style/Base.TextAppearance.AppCompat.Headline"
+        android:textColor="@color/colorPrimary"
+        android:text="About Vital Signs"
+        android:textSize="30sp" />
+
+    <ScrollView
+        android:id="@+id/data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/Bp"
+                android:textColor="@color/colorPrimaryDark"
+                style="@style/Base.TextAppearance.AppCompat.Headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:text="Blood Pressure"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/Base.TextAppearance.AppCompat.Body1"
+                android:textColor="#000000"
+                android:id="@+id/bp_info"
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Bp"
+                android:text="@string/bp" />
+
+            <ImageView
+                android:id="@+id/bp_range"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/bp_info"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/basic_bp" />
+
+            <TextView
+                android:id="@+id/hyp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/link"
+                android:layout_below="@+id/bp_range"
+                android:text="\nClick here for:\n Remedies of Hypertension (High Blood Pressure)" />
+
+            <TextView
+                android:id="@+id/hypo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/link"
+                android:layout_below="@+id/hyp"
+                android:text="\nClick here for:\n Remedies of Hypotension (Low Blood Pressure)" />
+
+            <View
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.55dp"
+                android:background="#000000"
+                android:layout_below="@+id/hypo"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/hr"
+                android:textColor="@color/colorPrimaryDark"
+                style="@style/Base.TextAppearance.AppCompat.Headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hypo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="Heart Rate"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/hr_info"
+                android:textSize="17sp"
+
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hr"
+                android:layout_marginTop="8dp"
+                android:text="@string/hr" />
+
+            <ImageView
+                android:id="@+id/hr_range"
+                android:layout_centerHorizontal="true"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_below="@id/hr_info"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/h_rate" />
+
+            <TextView
+                android:id="@+id/tal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hr_range"
+                android:textColor="@color/link"
+                android:text="\nClick here to know more about:\n Tachycardia (High Heart Rate)" />
+
+            <TextView
+                android:id="@+id/bal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tal"
+                android:textColor="@color/link"
+                android:text="\nClick here to know more about:\n Bradycardia (Low Heart Rate)" />
+
+<View
+    android:layout_marginTop="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="0.55dp"
+    android:background="#000000"
+    android:layout_below="@+id/bal"
+    android:layout_marginBottom="10dp"
+    />
+
+            <TextView
+                android:id="@+id/oxy"
+                style="@style/Base.TextAppearance.AppCompat.Headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bal"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="Oxygen Saturation"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/oxy_info"
+                android:textColor="#000000"
+                android:textSize="17sp"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/oxy"
+                android:text="@string/oxy" />
+
+            <ImageView
+                android:id="@+id/oxy_range"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/oxy_info"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/oxy_sat" />
+
+            <TextView
+                android:id="@+id/hypox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/oxy_range"
+                android:textColor="@color/link"
+                android:text="\nClick here for:\n Remedies of Hypoxemia (Low Oxygen level in blood)" />
+
+            <TextView
+                android:id="@+id/hyper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hypox"
+                android:textColor="@color/link"
+                android:text="\nClick here to know more about:\n Hyperoxia (High Oxygen levels)" />
+
+            <View
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.55dp"
+                android:background="#000000"
+                android:layout_below="@+id/hyper"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/resp"
+                style="@style/Base.TextAppearance.AppCompat.Headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hyper"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="Respiration Rate"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/resp_info"
+                android:textColor="#000000"
+                android:textSize="17sp"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/resp"
+                android:text="@string/resp" />
+
+
+            <TextView
+                android:textColor="#000000"
+                android:layout_below="@+id/resp_info"
+                android:id="@+id/resp_range"
+                android:textSize="17sp"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\nAverage resting respiratory rates by age are:\n
+* Birth to 6 weeks: 30–40 breaths per minute\n
+* 6 months: 25–40 breaths per minute\n
+* 3 years: 20–30 breaths per minute\n
+* 6 years: 18–25 breaths per minute\n
+* 10 years: 17–23 breaths per minute\n
+* Adults: 12-18 breaths per minute\n
+* Elderly ≥ 65 years old: 12-28 breaths per minute\n
+* Elderly ≥ 80 years old: 10-30 breaths per minute\n" />
+
+            <TextView
+                android:id="@+id/talch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/resp_range"
+                android:textColor="@color/link"
+                android:text="Click here to know more about:\n Tachypnea (High Respiration Rate)" />
+
+            <TextView
+                android:id="@+id/brady"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/talch"
+                android:textColor="@color/link"
+                android:text="\nClick here to know more about:\n Bradypnea (High Respiration Rate)" />
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="User icon"
+        android:paddingBottom="8dp"
+        android:src="@drawable/ic_account_circle_24dp" />
+
+    <ImageView
+        android:id="@+id/favourite"
+        android:visibility="gone"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignEnd="@id/icon"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_favorite_24dp" />
+
+    <RelativeLayout
+        android:id="@+id/user_name_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/icon"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toEndOf="@id/icon">
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="22sp"
+            android:textStyle="normal|bold" />
+
+        <ImageView
+            android:id="@+id/online_label"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/user_name"
+            android:contentDescription="online"
+            android:src="@drawable/ic_online_24dp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/user_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_name_view"
+        android:layout_alignStart="@id/user_name_view"
+        android:layout_toStartOf="@id/user_time"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="19sp" />
+
+    <TextView
+        android:id="@+id/user_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/user_name_view"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="4dp"
+        android:maxLines="1"
+        android:textSize="19sp" />
+
+    <ImageView
+        android:id="@+id/unread"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignTop="@id/user_time"
+        android:layout_alignEnd="@id/user_time"
+        android:layout_marginTop="6dp"
+        android:contentDescription="Unread messages label"
+        android:src="@drawable/ic_more_horiz_24dp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/unread"
+        android:background="#32000000"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+
+</RelativeLayout>

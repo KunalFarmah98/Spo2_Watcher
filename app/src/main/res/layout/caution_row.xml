@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+    <ImageView
+        android:id="@+id/row_icon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/bp_icon"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:id="@+id/row_descr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="High Blood Pressure"
+        android:layout_toEndOf="@id/row_icon"
+        android:layout_toStartOf="@id/row_remedy"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:alpha="1"
+        android:textSize="22sp"
+        android:textAlignment="viewStart"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/row_summary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Normal: 110/70 - 130/80"
+        android:layout_below="@id/row_descr"
+        android:layout_alignStart="@id/row_descr"
+        android:layout_alignEnd="@id/row_descr"
+        android:alpha="0.7"
+        android:textSize="18sp"
+        android:textAlignment = "viewStart"
+        android:layout_toEndOf="@id/row_icon"
+        android:layout_toStartOf="@id/row_remedy"/>
+
+    <ImageView
+        android:id="@+id/row_remedy"
+        android:src="@drawable/remedy_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="2dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="2dp"
+        android:textSize="42sp"
+        android:textAlignment="center"
+        android:layout_centerVertical="true"/>
+
+
+</RelativeLayout>

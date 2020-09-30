@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginHorizontal="5dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+    <android.support.v7.widget.CardView
+        android:id="@+id/user_login"
+        android:layout_width="129dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="50dp"
+        android:orientation="vertical"
+        app:cardBackgroundColor="#9965f4"
+        app:cardCornerRadius="20dp">
+
+        <ImageView
+            android:id="@+id/user_img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_person_black_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/user_img"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:text="Login as User"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="25sp" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/doc_login"
+        android:layout_width="129dp"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        app:cardBackgroundColor="#ff8d00"
+        app:cardCornerRadius="20dp">
+
+        <ImageView
+            android:id="@+id/doc_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_local_hospital_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/user_img"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:text="Login as Doctor"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="25sp" />
+    </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
