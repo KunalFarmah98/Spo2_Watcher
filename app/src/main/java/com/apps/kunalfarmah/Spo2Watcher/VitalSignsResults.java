@@ -4,10 +4,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -83,8 +83,19 @@ public class VitalSignsResults extends AppCompatActivity {
             caution.add(new CautiousVitalSigns(CautiousVitalSigns.HIGH, CautiousVitalSigns.O2));
         }
 
+        double spo2 = VO2, hr = VHR;
+        sPref = getSharedPreferences("Info", MODE_PRIVATE);
+        int maxHr = 220 - sPref.getInt("Age",21);
+        int minHr = 30;
+        int minO2 = 70;
+        int maxO2 = 99;
+        spo2 = (((spo2-minO2)/(maxO2-minO2))*2)-1;
+        hr = (((hr-minHr)/(maxHr-minHr))*2)-1;
+        String[] args = {String.valueOf(spo2),String.valueOf(hr)};
+        DecisionTreeClassifier.main(args);
+        Log.d("prediction",String.valueOf(DecisionTreeClassifier.estimation));
         // TODO:  put model here
-        if(VO2<=92){
+        if(VO2<=92 || DecisionTreeClassifier.estimation==1){
             AlertDialog.Builder builder = new AlertDialog.Builder(VitalSignsResults.this);
             builder.setView(R.layout.custom_spo2_alert_dialog);
             builder.setNegativeButton("Test Again", new DialogInterface.OnClickListener() {

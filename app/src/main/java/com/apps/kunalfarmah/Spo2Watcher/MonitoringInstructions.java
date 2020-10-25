@@ -2,7 +2,7 @@ package com.apps.kunalfarmah.Spo2Watcher;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
 import mehdi.sakout.fancybuttons.FancyButton;

@@ -98,7 +98,7 @@
             android:textColor="@color/colorAccent"
             android:textSize="15dp" />
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/helplines"
             android:layout_marginTop="10dp"
             android:layout_marginHorizontal="5dp"

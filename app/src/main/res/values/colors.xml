@@ -13,6 +13,9 @@
     <color name="myMessageColor">#fa8100</color>
     <color name="otherMessageColor">#ef0078</color>
     <color name="white">#FFFFFF</color>
-    <color name="transparent">#00000000</color>
     <color name="timeColor">#F91795</color>
+    <color name="red">#F31212</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="blue_menu">#338dc6</color>
+    <color name="blue_menu_button">#326fc6</color>
 </resources>

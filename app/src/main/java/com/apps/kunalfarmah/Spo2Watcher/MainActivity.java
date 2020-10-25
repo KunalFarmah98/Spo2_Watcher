@@ -6,12 +6,14 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.NonNull;
+
+import com.apps.kunalfarmah.Spo2Watcher.Android_wifi.ui.main.WifiActivity;
+import com.google.android.material.navigation.NavigationView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
@@ -23,13 +25,11 @@ import com.firebase.ui.auth.AuthUI;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 
 
-import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
         if(isDoctor){
             startActivity(new Intent(this,DoctorActivity.class));
         }
-
 
         setContentView(R.layout.activity_main);
         final LineChart chart1 = findViewById(R.id.chart1);
@@ -128,7 +127,8 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.nav_vital_signs:
-                        startActivity(new Intent(MainActivity.this, VitalSignsActivity.class));
+                        startActivity(new Intent(MainActivity.this, WifiActivity.class));
+//                        startActivity(new Intent(MainActivity.this, VitalSignsActivity.class));
                         return true;
                     case R.id.nav_consult:
                         startActivity(new Intent(MainActivity.this, ConsultActivity.class));
@@ -261,5 +261,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    int scaleBetween(int unscaledNum, int minAllowed, int maxAllowed, int min, int max) {
+        return (maxAllowed - minAllowed) * (unscaledNum - min) / (max - min) + minAllowed;
     }
 }

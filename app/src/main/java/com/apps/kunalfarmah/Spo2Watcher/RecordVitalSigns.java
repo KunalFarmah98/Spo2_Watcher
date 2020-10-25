@@ -7,7 +7,7 @@ import android.content.res.Configuration;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.os.PowerManager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.WindowManager;
@@ -16,7 +16,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.apps.kunalfarmah.Spo2Watcher.Math.Fft;
-import com.apps.kunalfarmah.Spo2Watcher.Math.Fft2;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -347,6 +346,14 @@ public class RecordVitalSigns extends AppCompatActivity {
                 startActivity(i);
                 finish();
             }
+
+// for testing
+         /*   Intent i = new Intent(RecordVitalSigns.this, VitalSignsResults.class);
+            i.putExtra("O2R", 82);
+            i.putExtra("bpm", 60);
+            i.putExtra("Usr", user);
+            startActivity(i);
+            finish();*/
 
             //keeps incrementing the progress bar and keeps the loop until we have a valid values for the previous if state
             if (RedAvg != 0) {

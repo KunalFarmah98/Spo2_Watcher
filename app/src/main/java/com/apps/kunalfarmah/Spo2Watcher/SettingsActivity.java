@@ -1,7 +1,7 @@
 package com.apps.kunalfarmah.Spo2Watcher;
 
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;

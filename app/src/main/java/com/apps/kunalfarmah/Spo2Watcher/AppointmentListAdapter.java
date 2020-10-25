@@ -5,32 +5,27 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-import com.google.firebase.database.ThrowOnExtraProperties;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.List;
 
 public class AppointmentListAdapter extends FirebaseRecyclerAdapter<PatientAppointment, AppointmentListAdapter.AppointmentHolder> {
 
@@ -92,7 +87,15 @@ public class AppointmentListAdapter extends FirebaseRecyclerAdapter<PatientAppoi
                         viewHolder.hr.setText(String.valueOf(signs.getHeartRate()));
                         viewHolder.os.setText(String.valueOf(signs.getOxygenSaturation()));
 
+                        String[] args = {String.valueOf(signs.getHeartRate()),String.valueOf(signs.getOxygenSaturation())};
+                        DecisionTreeClassifier.main(args);
+                        Log.d("prediction",String.valueOf(DecisionTreeClassifier.estimation));
                         //TODO: change background if signs are critical
+
+                        if(DecisionTreeClassifier.estimation==1 || signs.getOxygenSaturation()<=90){
+                            viewHolder.mainLayout.setBackgroundColor(context.getResources().getColor(R.color.red));
+                        }
+
                     }
 
                     @Override
