@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    tools:context=".OptionsActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/o2_icon"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"/>
+    <Button
+        android:id="@+id/ppg"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/measure_using_smartphone_camera_ppg"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textAllCaps="false"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/wifi"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:text="@string/measure_using_external_sensor_and_arduino_wifi_connection_is_required"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="@color/white"/>
+
+</LinearLayout>

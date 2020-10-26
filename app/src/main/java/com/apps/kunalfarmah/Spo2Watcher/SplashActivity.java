@@ -29,7 +29,8 @@ public class SplashActivity extends AppCompatActivity {
             "android.permission.ACCESS_NETWORK_STATE",
             "android.permission.READ_SMS",
             "android.permission.RECEIVE_SMS",
-            "android.permission.CALL_PHONE"
+            "android.permission.CALL_PHONE",
+            "android.permission.ACCESS_WIFI_STATE"
     };
     SharedPreferences sPref;
 
@@ -63,7 +64,8 @@ public class SplashActivity extends AppCompatActivity {
 
         if (!(checkCallingOrSelfPermission(permission_String[0]) == PackageManager.PERMISSION_GRANTED
                 && checkCallingOrSelfPermission(permission_String[1]) == PackageManager.PERMISSION_GRANTED
-                && checkCallingOrSelfPermission(permission_String[2]) == PackageManager.PERMISSION_GRANTED)) {
+                && checkCallingOrSelfPermission(permission_String[2]) == PackageManager.PERMISSION_GRANTED)
+                && checkCallingOrSelfPermission(permission_String[3])==PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, permission_String, 131);
         } else
             DisplayActivity();
@@ -96,6 +98,7 @@ public class SplashActivity extends AppCompatActivity {
                 if (grantResults.length != 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED
                         && grantResults[1] == PackageManager.PERMISSION_GRANTED
                         && grantResults[2] == PackageManager.PERMISSION_GRANTED
+                        && grantResults[3] == PackageManager.PERMISSION_GRANTED
                 ) {
 
                     DisplayActivity();

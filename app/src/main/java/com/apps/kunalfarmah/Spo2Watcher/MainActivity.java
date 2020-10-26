@@ -127,8 +127,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.nav_vital_signs:
-                        startActivity(new Intent(MainActivity.this, WifiActivity.class));
-//                        startActivity(new Intent(MainActivity.this, VitalSignsActivity.class));
+                        startActivity(new Intent(MainActivity.this, OptionsActivity.class));
                         return true;
                     case R.id.nav_consult:
                         startActivity(new Intent(MainActivity.this, ConsultActivity.class));

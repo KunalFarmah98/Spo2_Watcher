@@ -2,24 +2,25 @@ package com.apps.kunalfarmah.Spo2Watcher.Android_wifi.ui
 
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
+import android.net.wifi.WifiManager
 import android.os.Build
-import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.format.Formatter
 import android.widget.EditText
 import android.widget.Toast
-
-import com.apps.kunalfarmah.Spo2Watcher.Android_wifi.Pref
-import com.apps.kunalfarmah.Spo2Watcher.Android_wifi.Util
-import com.apps.kunalfarmah.Spo2Watcher.Android_wifi.app.TofahaApplication
-
-import javax.inject.Inject
-
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.OnClick
+import com.apps.kunalfarmah.Spo2Watcher.Android_wifi.Pref
+import com.apps.kunalfarmah.Spo2Watcher.Android_wifi.Util
+import com.apps.kunalfarmah.Spo2Watcher.Android_wifi.app.TofahaApplication
 import com.apps.kunalfarmah.Spo2Watcher.Android_wifi.ui.main.WifiActivity
 import com.apps.kunalfarmah.Spo2Watcher.R
+import java.util.*
+import javax.inject.Inject
+
 
 class InfoActivity : AppCompatActivity() {
 
@@ -41,8 +42,10 @@ class InfoActivity : AppCompatActivity() {
 
         ButterKnife.bind(this)
 
-        supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.blue_menu)))
-        window.statusBarColor = resources.getColor(R.color.blue_menu)
+        supportActionBar!!.title = "Measure from Arduino"
+        val wm = getApplicationContext().getSystemService(WIFI_SERVICE) as WifiManager
+        val ip: String = Formatter.formatIpAddress(wm.connectionInfo.ipAddress)
+        ipAddress.setText(ip)
 
         if (Util.isValidIp(pref!!.ipAddress!!) && pref!!.portNumber != 0) {
             startMainActivity()
@@ -71,9 +74,6 @@ class InfoActivity : AppCompatActivity() {
 
     fun startMainActivity() {
         val intent = Intent(this@InfoActivity, WifiActivity::class.java)
-        intent.flags = (Intent.FLAG_ACTIVITY_CLEAR_TASK
-                or Intent.FLAG_ACTIVITY_CLEAR_TOP
-                or Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(intent)
     }
 

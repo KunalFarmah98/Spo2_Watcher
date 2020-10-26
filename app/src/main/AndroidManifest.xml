@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.flash" />
@@ -16,18 +17,19 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
-        android:name="com.apps.kunalfarmah.Spo2Watcher.Android_wifi.app.TofahaApplication"
+        android:name=".Android_wifi.app.TofahaApplication"
         android:allowBackup="true"
+        android:forceDarkAllowed="false"
         android:icon="@drawable/report_icon"
         android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@drawable/report_icon"
         android:supportsRtl="true"
-        android:forceDarkAllowed="false"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="q">
-        <activity android:name=".HelpActivity"></activity>
+        <activity android:name=".OptionsActivity"></activity>
+        <activity android:name=".HelpActivity" />
         <activity android:name=".MyReportsActivity" />
         <activity
             android:name=".MyAppointmentsActivity"
@@ -82,13 +84,13 @@
             android:label="Vital Signs Wizard" />
         <activity
             android:name=".VitalSignsResults"
-            android:launchMode = "singleInstance"
-            android:label="Results" />
+            android:label="Results"
+            android:launchMode="singleInstance" />
         <activity
             android:name=".SettingsActivity"
             android:label="Settings" />
-        <activity android:name=".Android_wifi.ui.main.WifiActivity"/>
-        <activity android:name=".Android_wifi.ui.InfoActivity"/>
+        <activity android:name=".Android_wifi.ui.main.WifiActivity" />
+        <activity android:name=".Android_wifi.ui.InfoActivity" />
         <activity android:name=".tempActivity" />
         <activity android:name=".InfoActivity" />
         <activity android:name=".RemedyActivity" />

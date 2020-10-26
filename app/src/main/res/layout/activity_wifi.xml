@@ -216,6 +216,7 @@
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fab"
+                android:visibility="gone"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:layout_alignParentBottom="true"

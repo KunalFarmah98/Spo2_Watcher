@@ -41,5 +41,7 @@
     <string name="code_source">the application code source and arduino program are both available in my  github repository with a brief explanation about the communication between the two endpoint</string>
 
     <string name="my_repo"><a href="https://github.com/ayoubElhoucine/Connect-Android-to-Arduino-via-Wifi">Navigate into the code source repository</a></string>
+    <string name="measure_using_smartphone_camera_ppg">Measure using Smartphone Camera (PPG)</string>
+    <string name="measure_using_external_sensor_and_arduino_wifi_connection_is_required">Measure using External Sensor and Arduino (Wifi Connection is Required)</string>
 
 </resources>

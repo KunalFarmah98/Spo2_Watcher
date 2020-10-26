@@ -48,8 +48,7 @@ class WifiActivity : AppCompatActivity() , MainView {
 
         MyData.wifiActivity = this
 
-        supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.blue_menu)))
-        window.statusBarColor = resources.getColor(R.color.blue_menu)
+        supportActionBar!!.title = "Measure From Arduino"
 
         this.fab.bringToFront()
         this.fab.parent.requestLayout()
