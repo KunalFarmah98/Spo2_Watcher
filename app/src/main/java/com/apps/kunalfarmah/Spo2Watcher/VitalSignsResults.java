@@ -1,5 +1,6 @@
 package com.apps.kunalfarmah.Spo2Watcher;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,7 +28,7 @@ public class VitalSignsResults extends AppCompatActivity {
     DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
     java.util.Date today = Calendar.getInstance().getTime();
     int VBP1, VBP2, VRR, VHR, VO2;
-    SharedPreferences sPref;
+    SharedPreferences sPref,sPref1,sPref2;
 
     ArrayList<CautiousVitalSigns> caution = new ArrayList<>();
     RecyclerView recyclerView;
@@ -37,6 +39,9 @@ public class VitalSignsResults extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vital_signs_results);
         sPref = getSharedPreferences("MyVitals",MODE_PRIVATE);
+        sPref1 = getSharedPreferences("MeasurementCount",MODE_PRIVATE);
+        sPref2 = getSharedPreferences("measurement_type", MODE_PRIVATE);
+
         Date = df.format(today);
         TextView VSHR = this.findViewById(R.id.HRV);
         TextView VSO2 = this.findViewById(R.id.O2V);
@@ -95,27 +100,40 @@ public class VitalSignsResults extends AppCompatActivity {
         DecisionTreeClassifier.main(args);
         Log.d("prediction",String.valueOf(DecisionTreeClassifier.estimation));
         // TODO:  put model here
-        if(VO2<=92 || DecisionTreeClassifier.estimation==1){
-            AlertDialog.Builder builder = new AlertDialog.Builder(VitalSignsResults.this);
-            builder.setView(R.layout.custom_spo2_alert_dialog);
-            builder.setNegativeButton("Test Again", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    finish();
-                    startActivity(new Intent(VitalSignsResults.this, RecordVitalSigns.class));
-                }
-            });
+        if(VO2<94){
+            int count = sPref1.getInt("Count",0);
+            ++count;
+            if(count>=4) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(VitalSignsResults.this);
+                builder.setView(R.layout.custom_spo2_alert_dialog);
+                builder.setNegativeButton("Test Again", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                        startActivity(new Intent(VitalSignsResults.this, RecordVitalSigns.class));
+                    }
+                });
 
-            builder.setPositiveButton("Seek Help", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    finish();
-                    startActivity(new Intent(VitalSignsResults.this, HelpActivity.class));
+                builder.setPositiveButton("Seek Help", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                        startActivity(new Intent(VitalSignsResults.this, HelpActivity.class));
+                    }
+                });
+                AlertDialog dialog = builder.create();
+                if(sPref2.getBoolean("isPPG",true)){
+                    dialog.findViewById(R.id.warning2).setVisibility(View.VISIBLE);
                 }
-            });
-
-            AlertDialog dialog = builder.create();
-            dialog.show();
+                else{
+                    dialog.findViewById(R.id.warning2).setVisibility(View.GONE);
+                }
+                dialog.show();
+            }
+            sPref1.edit().putInt("Count",count).apply();
+        }
+        else{
+            sPref1.edit().putInt("Count",0).apply();
         }
 
         CautionAdapter adapter = new CautionAdapter(caution);

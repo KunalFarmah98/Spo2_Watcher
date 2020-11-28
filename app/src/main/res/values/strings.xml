@@ -37,7 +37,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="warning">Symptom Alert</string>
-    <string name="warning_body">Your Blood Oxygen Levels have been found to be abnormally low that may indicate presence of assymptomatic infection.\nIt is Highly Recommended that you test your vitals again and if the reading persists, contact your nearest covid response centre immediately for a complete test to rule out any possibility of an assymptomatic infection or a reinfection if you are an existing patient.</string>
+    <string name="warning_body1">Your Blood Oxygen Levels have been found to be abnormally low quite a few times that may indicate presence of an infection. If you are experiencing any other symptom like Fever, Headache, Dry Cough or Difficulty breathing, contact your nearest Covid-19 Health facility immediately by clicking the seek help button. </string>
+    <string name="warning_body2">However, if you are not experiencing any other symptoms, it is Highly Recommended that you test your vitals again (with the second more accurate Arduino method if possible) and if the reading persists, contact your nearest Covid-19 Response centre immediately for a complete test to rule out any possibility of an assymptomatic infection or a reinfection if you are an existing patient.</string>
     <string name="code_source">the application code source and arduino program are both available in my  github repository with a brief explanation about the communication between the two endpoint</string>
 
     <string name="my_repo"><a href="https://github.com/ayoubElhoucine/Connect-Android-to-Arduino-via-Wifi">Navigate into the code source repository</a></string>

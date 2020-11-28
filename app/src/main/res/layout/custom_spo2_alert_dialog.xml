@@ -32,14 +32,26 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/warning"
+        android:id="@+id/warning1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/warning_body1"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/warning2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:text="@string/warning_body"
+        android:layout_marginHorizontal="10dp"
+        android:text="@string/warning_body2"
         android:textColor="@color/black"
-        android:textSize="16dp" />
+        android:textSize="15sp" />
 
 
 </LinearLayout>
