@@ -32,7 +32,7 @@ class OptionsActivity : AppCompatActivity() {
 
         wifi!!.setOnClickListener {
             sharedPreferences!!.edit().putBoolean("isPPG",false).apply();
-            startActivity(Intent(this, InfoActivity::class.java))
+            startActivity(Intent(this, ArduinoActivity::class.java))
         }
     }
 
