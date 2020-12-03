@@ -348,8 +348,8 @@ public class RecordVitalSigns extends AppCompatActivity {
             }
 
 // for testing
-         /*   Intent i = new Intent(RecordVitalSigns.this, VitalSignsResults.class);
-            i.putExtra("O2R", 82);
+            /*Intent i = new Intent(RecordVitalSigns.this, VitalSignsResults.class);
+            i.putExtra("O2R", 92);
             i.putExtra("bpm", 60);
             i.putExtra("Usr", user);
             startActivity(i);
