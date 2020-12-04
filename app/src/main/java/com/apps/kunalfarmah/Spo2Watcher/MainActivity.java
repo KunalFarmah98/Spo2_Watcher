@@ -139,9 +139,10 @@ public class MainActivity extends AppCompatActivity {
                                 .signOut(MainActivity.this)
                                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                                     public void onComplete(@NonNull Task<Void> task) {
-                                        startActivity(new Intent(MainActivity.this, MainActivity.class));
+                                        startActivity(new Intent(MainActivity.this, LoginActivity.class));
                                     }
                                 });
+                        return true;
 
                     case R.id.nav_my_results:
                         startActivity(new Intent(MainActivity.this,MyReportsActivity.class));
@@ -165,6 +166,7 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.nav_settings:
                         startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+                        return true;
 
                 }
 

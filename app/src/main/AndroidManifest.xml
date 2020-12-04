@@ -115,7 +115,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".MonitoringInstructions"
-            android:label="Measure Vital signs"
+            android:label="Measure Vital Signs"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity

@@ -95,9 +95,10 @@ public class DoctorActivity extends AppCompatActivity {
                     .signOut(DoctorActivity.this)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         public void onComplete(@NonNull Task<Void> task) {
-                            startActivity(new Intent(DoctorActivity.this,MainActivity.class));
+                            startActivity(new Intent(DoctorActivity.this,LoginActivity.class));
                         }
                     });
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
