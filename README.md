@@ -1,11 +1,13 @@
-# HEALTH++ - A  PPG based vital signs testing Android App:
+# SPO2 Wacther - A  PPG based Remote Covid-19 patient monitoring app:
 
 #### Nowadays healthcare has become an important factor for a developing country to keep up with the pther countries.
-This app brings the feature fo testing Vital Signs namely, Blood Pressure, Heart Rate, Oxygen Saturation as well as Respiration Rate to a simple android application in which just u need is to put ur index finger on the camera and its done using Photoplethysmography
+This app brings the feature fo testing Vital Signs namely, Blood Pressure, Heart Rate, Oxygen Saturation as well as Respiration Rate to a simple android application in which just u need is to put ur index finger on the camera and its done using Photoplethysmography.
+
+#### In the age of Covid-19, remote monitoring of patients is the need of the hour as there is a huge load on the healthcare system and the government.
 
 #### Photoplethysmography (PPG) is a simple and low-cost optical technique that can be used to detect blood volume changes in the microvascular bed of tissue. It is often used non-invasively to make measurements at the skin surface.
 
-* This Android application uses this concept to measure the vital signs of the body namely Blood Pressure, Heart Rate, Oxygen Saturation and Respiration Rate with the help of the Camera and Flash.
+* This Android application uses this concept to measure the vital signs of the body namely Heart Rate and Oxygen Saturation with the help of the Camera and Flash.
 
 * It shoots a video of 30 seconds, then analyses it frame by frame to match the perfect orientation of the images and selects the best image 
 and calculates the required results using Image Processing, Bessel function and Fast Fourier Transform and much more complex functions.
