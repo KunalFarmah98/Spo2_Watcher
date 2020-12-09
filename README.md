@@ -48,4 +48,4 @@ and calculates the required results using Image Processing, Bessel function and 
   </p>
 
 
-##### Learn more by downloading this peresentation: https://github.com/KunalFarmah98/Health-/blob/master/app/src/main/res/raw/Vihaan_ppt.pptx
+##### Learn more by downloading this peresentation: https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/spo2_Watcher.pptx
