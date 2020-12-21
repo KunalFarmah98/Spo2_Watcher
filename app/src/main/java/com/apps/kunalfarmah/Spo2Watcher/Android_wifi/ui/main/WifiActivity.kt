@@ -1,11 +1,15 @@
 package com.apps.kunalfarmah.Spo2Watcher.Android_wifi.ui.main
 
-import android.graphics.drawable.ColorDrawable
+import android.app.Dialog
+import android.content.Intent
 import android.os.*
-import androidx.appcompat.app.AppCompatActivity
-import androidx.annotation.RequiresApi
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.EditText
 import android.widget.TextView
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.HandlerCompat.postDelayed
 import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.OnClick
@@ -16,24 +20,35 @@ import com.apps.kunalfarmah.Spo2Watcher.Android_wifi.connection.CLoseConnection
 import com.apps.kunalfarmah.Spo2Watcher.Android_wifi.connection.OpenConnection
 import com.apps.kunalfarmah.Spo2Watcher.Android_wifi.connection.SendMessages
 import com.apps.kunalfarmah.Spo2Watcher.Android_wifi.ui.FloatingMenuFragment
+import com.apps.kunalfarmah.Spo2Watcher.Android_wifi.ui.InfoActivity
+import com.apps.kunalfarmah.Spo2Watcher.ArduinoActivity
 import com.apps.kunalfarmah.Spo2Watcher.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_wifi.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 import java.io.*
+import java.util.zip.Inflater
 import javax.inject.Inject
+
 
 class WifiActivity : AppCompatActivity() , MainView {
 
 
     var input: BufferedReader? = null
+    lateinit var nextIntent: Intent
+    var dialog: Dialog?=null
+    lateinit var handler:Handler
+    lateinit var dialogRunnable:Runnable
 
     @Inject
     lateinit var pref: Pref
 
-    @BindView(R.id.text_message)
-    lateinit var msgText : EditText
+    @BindView(R.id.ssid)
+    lateinit var ssidText : EditText
+
+    @BindView(R.id.password)
+    lateinit var passwordText : EditText
 
     @BindView(R.id.server_response)
     lateinit var serverResponse : TextView
@@ -48,32 +63,21 @@ class WifiActivity : AppCompatActivity() , MainView {
 
         MyData.wifiActivity = this
 
-        supportActionBar!!.title = "Measure From Arduino"
+        dialog = Dialog(this)
+        dialog!!.setTitle("Waiting for Arduino to acknowlege...")
+        dialog!!.setContentView(R.layout.please_wait)
+        dialog!!.setCancelable(false)
 
         this.fab.bringToFront()
         this.fab.parent.requestLayout()
 
-        led1.setOnClickListener({
-            var m : String
-            if (led1.isChecked)
-                m = "pin=11"
-            else
-                m = "pin=01"
-            sendMessage(m)
-        })
-
-        led2.setOnClickListener({
-            var m : String
-            if (led2.isChecked)
-                m = "pin=22"
-            else
-                m = "pin=02"
-            sendMessage(m)
-        })
-
         refresh_connection.setOnClickListener({
             openConnection()
         })
+
+
+        handler = Handler()
+        dialogRunnable = Runnable {dialog!!.dismiss()}
 
     }
 
@@ -87,12 +91,14 @@ class WifiActivity : AppCompatActivity() , MainView {
 
     @OnClick(R.id.send_message)
     fun sendButton(){
-        sendMessage(msgText.text.toString())
+        sendMessage(String.format("%s\n%s", ssidText.text.toString().trim(), passwordText.text.toString().trim()))
     }
 
-    override fun sendMessage(msg : String) {
+    override fun sendMessage(msg: String) {
         var sendMessages = SendMessages(msg)
         sendMessages!!.execute()
+        dialog!!.show()
+        handler.postDelayed(dialogRunnable,10*1000)
     }
 
     override fun openConnection() {
@@ -114,7 +120,14 @@ class WifiActivity : AppCompatActivity() , MainView {
                 msgText = input?.readLine().toString()
 
                 uiThread {
-                    serverResponse.text = msgText
+                    if(!msgText.equals("waiting ....")) {
+                        serverResponse.text = msgText
+                        nextIntent = Intent(applicationContext, ArduinoActivity::class.java);
+                        nextIntent.putExtra("id", msgText);
+                        dialog!!.hide()
+                        startActivity(intent)
+                        finish()
+                    }
                 }
             }
         }
@@ -138,7 +151,30 @@ class WifiActivity : AppCompatActivity() , MainView {
 
     override fun onBackPressed() {
         finish()
+        handler.removeCallbacks(dialogRunnable)
         super.onBackPressed()
+    }
+
+    override fun onDestroy() {
+        handler.removeCallbacks(dialogRunnable)
+        super.onDestroy()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.wifi_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if(item.itemId==R.id.change_ip_details){
+            var intent = Intent(applicationContext,InfoActivity::class.java)
+            intent.putExtra("clear",true)
+            startActivity(intent)
+            finish()
+        }
+        return true
     }
 
 }

@@ -42,11 +42,10 @@ class InfoActivity : AppCompatActivity() {
 
         ButterKnife.bind(this)
 
-        supportActionBar!!.title = "Measure from Arduino"
-        val wm = getApplicationContext().getSystemService(WIFI_SERVICE) as WifiManager
-        val ip: String = Formatter.formatIpAddress(wm.connectionInfo.ipAddress)
-        ipAddress.setText(ip)
-
+        if(intent.getBooleanExtra("clear",false)) {
+            pref.ipAddress = ""
+            pref.portNumber = 0
+        }
         if (Util.isValidIp(pref!!.ipAddress!!) && pref!!.portNumber != 0) {
             startMainActivity()
         }
@@ -75,6 +74,7 @@ class InfoActivity : AppCompatActivity() {
     fun startMainActivity() {
         val intent = Intent(this@InfoActivity, WifiActivity::class.java)
         startActivity(intent)
+        finish()
     }
 
 }

@@ -18,6 +18,7 @@
 
     <application
         android:allowBackup="true"
+        android:name=".Android_wifi.app.TofahaApplication"
         android:forceDarkAllowed="false"
         android:icon="@drawable/report_icon"
         android:label="@string/app_name"
@@ -135,11 +136,13 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Android_wifi.ui.main.WifiActivity"
+            android:label="Wifi Configuration"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Android_wifi.ui.InfoActivity"
             android:launchMode="singleTask"
+            android:label="Arduino Wifi Configuration"
             android:screenOrientation="portrait" />
         <activity
             android:name=".tempActivity"

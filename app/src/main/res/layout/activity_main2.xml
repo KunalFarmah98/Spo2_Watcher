@@ -69,7 +69,7 @@
                     android:inputType="textWebEmailAddress|numberPassword|phone"
                     android:digits="0123456789."
                     android:gravity="center"
-                    android:hint="IP address" />
+                    android:hint="Arduino IP address" />
 
                 <EditText
                     android:id="@+id/port_number"
@@ -81,7 +81,7 @@
                     android:gravity="center"
                     android:inputType="number"
                     android:digits="0123456789"
-                    android:hint="port number"/>
+                    android:hint="Port Number"/>
 
                 <Button
                     android:id="@+id/login_next"

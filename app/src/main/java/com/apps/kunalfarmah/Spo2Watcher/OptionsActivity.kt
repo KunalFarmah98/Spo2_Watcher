@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.apps.kunalfarmah.Spo2Watcher.Android_wifi.ui.InfoActivity
+import com.apps.kunalfarmah.Spo2Watcher.Android_wifi.ui.main.WifiActivity
 
 class OptionsActivity : AppCompatActivity() {
 
@@ -32,7 +33,9 @@ class OptionsActivity : AppCompatActivity() {
 
         wifi!!.setOnClickListener {
             sharedPreferences!!.edit().putBoolean("isPPG",false).apply();
-            startActivity(Intent(this, ArduinoActivity::class.java))
+//            startActivity(Intent(this, ArduinoActivity::class.java))
+            startActivity(Intent(this, InfoActivity::class.java))
+
         }
     }
 

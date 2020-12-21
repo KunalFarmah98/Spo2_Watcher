@@ -20,10 +20,11 @@ import com.google.firebase.database.ValueEventListener;
 public class ArduinoActivity extends AppCompatActivity {
 
     private LinearLayout data, waiting;
-    private DatabaseReference hrRef, spo2Ref;
+    private DatabaseReference oxymeterRef, hrRef, spo2Ref;
     private TextView hr, spo2;
     private CountDownTimer timer;
     private ValueEventListener hrListener, spo2Listener;
+    private String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class ArduinoActivity extends AppCompatActivity {
         waiting = findViewById(R.id.waiting);
         hr = findViewById(R.id.hr);
         spo2 = findViewById(R.id.spo2);
-
+        id = getIntent().getStringExtra("id");
         timer = new CountDownTimer(10000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -50,8 +51,8 @@ public class ArduinoActivity extends AppCompatActivity {
                 finish();
             }
         };
-
-        hrRef = FirebaseDatabase.getInstance().getReference("sensor").child("hr");
+        oxymeterRef = FirebaseDatabase.getInstance().getReference(id).child("pulse oxymeter");
+        hrRef = oxymeterRef.child("hr");
         hrListener  = (new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -71,7 +72,7 @@ public class ArduinoActivity extends AppCompatActivity {
             }
         });
 
-        spo2Ref = FirebaseDatabase.getInstance().getReference("sensor").child("spo2");
+        spo2Ref = oxymeterRef.child("spo2");
         spo2Listener = (new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
