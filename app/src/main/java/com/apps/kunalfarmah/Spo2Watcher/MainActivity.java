@@ -34,6 +34,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         sharedPref = getSharedPreferences("doctor_logo", Context.MODE_PRIVATE);
         sref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         isDoctor = sharedPref.getBoolean("isDoctor", true);
+        FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(true);
 
         if(isDoctor){
             startActivity(new Intent(this,DoctorActivity.class));
@@ -139,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
                                 .signOut(MainActivity.this)
                                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                                     public void onComplete(@NonNull Task<Void> task) {
+                                        finishAffinity();
                                         startActivity(new Intent(MainActivity.this, LoginActivity.class));
                                     }
                                 });
