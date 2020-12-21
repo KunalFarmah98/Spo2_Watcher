@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Android_wifi.ui.AppSourceCode">
+    tools:context=".android_wifi.ui.AppSourceCode">
 
 
     <TextView

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PatientInfoActivity">
+    tools:context=".activity.PatientInfoActivity">
 
     <TextView
         android:id="@+id/head"

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Android_wifi.ui.main.WifiActivity">
+    tools:context=".android_wifi.ui.main.WifiActivity">
 
 
     <LinearLayout

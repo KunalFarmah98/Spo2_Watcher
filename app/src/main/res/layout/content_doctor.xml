@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".DoctorActivity"
+    tools:context=".activity.DoctorActivity"
     tools:showIn="@layout/app_bar_doctor">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
