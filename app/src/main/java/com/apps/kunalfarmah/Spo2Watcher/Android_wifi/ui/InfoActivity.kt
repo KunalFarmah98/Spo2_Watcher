@@ -5,6 +5,7 @@ import android.graphics.drawable.ColorDrawable
 import android.net.wifi.WifiManager
 import android.os.Build
 import android.os.Bundle
+import android.os.Message
 import android.text.format.Formatter
 import android.widget.EditText
 import android.widget.Toast
@@ -30,6 +31,8 @@ class InfoActivity : AppCompatActivity() {
     @BindView(R.id.port_number)
     lateinit var portNumber: EditText
 
+    var msg: String?=null
+
     @Inject
     lateinit var pref: Pref
 
@@ -46,6 +49,11 @@ class InfoActivity : AppCompatActivity() {
             pref.ipAddress = ""
             pref.portNumber = 0
         }
+        msg = intent.getStringExtra("msg")
+
+        if(null!=msg && !!msg!!.isEmpty())
+            Toast.makeText(this,msg,Toast.LENGTH_SHORT).show()
+
         if (Util.isValidIp(pref!!.ipAddress!!) && pref!!.portNumber != 0) {
             startMainActivity()
         }
