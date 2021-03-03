@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout mDrawerLayout;
     private DatabaseReference mDatabase;
     // shared preference for doctor_logo
-    static SharedPreferences sharedPref,sref;
+    static SharedPreferences sharedPref,sref,detailsPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         sharedPref = getSharedPreferences("doctor_logo", Context.MODE_PRIVATE);
         sref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         isDoctor = sharedPref.getBoolean("isDoctor", true);
+        detailsPref = getSharedPreferences("DETAILS",MODE_PRIVATE);
         FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(true);
 
         if(isDoctor){
@@ -139,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_logout:
                         sharedPref.edit().clear().apply();
                         sref.edit().clear().apply();
+                        detailsPref.edit().clear().apply();
                         AuthUI.getInstance()
                                 .signOut(MainActivity.this)
                                 .addOnCompleteListener(new OnCompleteListener<Void>() {

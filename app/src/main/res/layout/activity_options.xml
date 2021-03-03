@@ -35,4 +35,16 @@
         android:backgroundTint="@color/colorPrimaryDark"
         android:textColor="@color/white"/>
 
+    <Button
+        android:id="@+id/edit_mcu_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textAllCaps="false"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:text="@string/edit_details"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="@color/white"/>
+
 </LinearLayout>

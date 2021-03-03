@@ -49,5 +49,14 @@
     <string name="enter_wifi_password">Enter Wifi Password</string>
     <string name="waiting">Waiting .....</string>
     <string name="waiting_dialog">Waiting for Arduino to acknowlege...</string>
+    <string name="please_provide_the_following_details_to_continue">Please provide the following details to continue:</string>
+    <string name="name">Name</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="phone_info">Please provide your mobile number where you will receive an SMS of the readings if you are only using the sensor without using the app.</string>
+    <string name="enter_your_mobile">Enter your mobile number</string>
+    <string name="emergency_details">Emergency Details: These numbers would receive an SOS SMS in case your vitals are found to be abnormal more than once. Feel free to skip adding theses numbers and you can add them later as well</string>
+    <string name="node_mcu_id">Please enter the NodeMCU id:</string>
+    <string name="mcu_id">NodeMCU id</string>
+    <string name="edit_details">Edit User Details used by NodeMCU</string>
 
 </resources>

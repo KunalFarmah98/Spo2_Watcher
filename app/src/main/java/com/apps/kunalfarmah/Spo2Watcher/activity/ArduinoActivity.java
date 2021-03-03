@@ -52,7 +52,7 @@ public class ArduinoActivity extends AppCompatActivity {
                 finish();
             }
         };
-        oxymeterRef = FirebaseDatabase.getInstance().getReference(id).child("pulse oxymeter");
+        oxymeterRef = FirebaseDatabase.getInstance().getReference().child("sensors").child(id).child("pulse_oximeter").child("vitals");
         hrRef = oxymeterRef.child("hr");
         hrListener  = (new ValueEventListener() {
             @Override
