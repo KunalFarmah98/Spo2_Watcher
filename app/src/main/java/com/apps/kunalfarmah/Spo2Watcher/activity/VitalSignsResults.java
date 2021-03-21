@@ -1,5 +1,7 @@
 package com.apps.kunalfarmah.Spo2Watcher.activity;
 
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -33,7 +36,7 @@ public class VitalSignsResults extends AppCompatActivity {
     DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
     java.util.Date today = Calendar.getInstance().getTime();
     int VBP1, VBP2, VRR, VHR, VO2;
-    SharedPreferences sPref, sPref1, sPref2;
+    SharedPreferences sPref, sPref1, sPref2, detailPrefs;
 
     ArrayList<CautiousVitalSigns> caution = new ArrayList<>();
     RecyclerView recyclerView;
@@ -50,6 +53,8 @@ public class VitalSignsResults extends AppCompatActivity {
         Date = df.format(today);
         TextView VSHR = this.findViewById(R.id.HRV);
         TextView VSO2 = this.findViewById(R.id.O2V);
+
+        detailPrefs = getSharedPreferences("DETAILS", Context.MODE_PRIVATE);
 
         recyclerView = this.findViewById(R.id.caution_signs);
 
@@ -106,7 +111,7 @@ public class VitalSignsResults extends AppCompatActivity {
         if (VO2 < 94) {
             int count = sPref1.getInt("Count", 0);
             ++count;
-            if (count >= 4) {
+            if (count >= 2) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(VitalSignsResults.this);
                 View v = getLayoutInflater().inflate(R.layout.custom_spo2_alert_dialog, null);
                 builder.setView(v);
@@ -132,6 +137,7 @@ public class VitalSignsResults extends AppCompatActivity {
                     TextView warning2 = (TextView) v.findViewById(R.id.warning2);
                     warning2.setVisibility(View.GONE);
                 }
+                sendSOS();
                 AlertDialog dialog = builder.create();
                 dialog.show();
             }
@@ -150,6 +156,20 @@ public class VitalSignsResults extends AppCompatActivity {
     public void onBackPressed() {
         // startActivity(new Intent(VitalSignsResults.this,MainActivity.class));
         finish();
+    }
+
+    void sendSOS(){
+        String msg = String.format("Your contact %s: %s has got abnormal vital signs measured with Heart Rate = %s and SPO2 = %s \n You are receiving this message because they have listed you as an emergency contact while using SPO2 Watcher App."
+                , detailPrefs.getString("NAME",""), detailPrefs.getString("CONTACT",""), VHR,VO2);
+        String eph1 = "+91"+detailPrefs.getString("EPH1","");
+        String eph2 = "+91"+detailPrefs.getString("EPH2","");
+        SmsManager sms=SmsManager.getDefault();
+        ArrayList<String> messageList = SmsManager.getDefault().divideMessage(msg);
+        if(!eph1.isEmpty())
+            sms.sendMultipartTextMessage(eph1, null, messageList, null,null);
+        if(!eph2.isEmpty())
+            sms.sendMultipartTextMessage(eph2, null, messageList, null,null);
+
     }
 
 

@@ -36,6 +36,13 @@ public class ArduinoActivity extends AppCompatActivity {
         hr = findViewById(R.id.hr);
         spo2 = findViewById(R.id.spo2);
         id = getIntent().getStringExtra("id");
+        //abnormal readings test case
+       /*        Intent i = new Intent(RecordVitalSigns.this, VitalSignsResults.class);
+            i.putExtra("O2R", 92);
+            i.putExtra("bpm", 60);
+            i.putExtra("Usr", user);
+            startActivity(i);
+            finish();*/
         timer = new CountDownTimer(10000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {

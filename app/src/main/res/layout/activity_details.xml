@@ -28,6 +28,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/nodeMcuId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -157,7 +158,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/phone_info"
+                android:text="@string/emergency_contact_1"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
@@ -165,7 +166,7 @@
                 android:id="@+id/emergencyphone1_et"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/enter_your_mobile"
+                android:hint="@string/emergency_contact_1"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -181,7 +182,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/phone_info"
+                android:text="@string/emergency_contact_2"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
@@ -189,7 +190,7 @@
                 android:id="@+id/emergencyphone2_et"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/enter_your_mobile"
+                android:hint="@string/emergency_contact_2"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
         </LinearLayout>

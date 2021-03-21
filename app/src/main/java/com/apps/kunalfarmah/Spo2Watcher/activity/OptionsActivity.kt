@@ -39,11 +39,18 @@ class OptionsActivity : AppCompatActivity() {
         }
         wifi = findViewById(R.id.wifi)
 
+        if(detailPrefs.getString(NAME,"").isNullOrEmpty()){
+            var intent = Intent(this,DetailsActivity::class.java)
+            intent.putExtra("editing",false)
+            intent.putExtra("redirect",true)
+            startActivity(intent)
+        }
         wifi!!.setOnClickListener {
             sharedPreferences!!.edit().putBoolean("isPPG",false).apply()
-            if(detailPrefs.getString(NAME,"").isNullOrEmpty()){
+            if(getSharedPreferences(NODE_MCU, MODE_PRIVATE).getString(MCUID,"").isNullOrEmpty()){
                 var intent = Intent(this,DetailsActivity::class.java)
                 intent.putExtra("editing",false)
+                intent.putExtra("redirect",false);
                 startActivity(intent)
             }
             else{
@@ -59,6 +66,7 @@ class OptionsActivity : AppCompatActivity() {
         edit!!.setOnClickListener{
             var intent = Intent(this,DetailsActivity::class.java)
             intent.putExtra("editing",true)
+            intent.putExtra("redirect",false);
             startActivity(intent)
         }
     }

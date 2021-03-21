@@ -58,5 +58,7 @@
     <string name="node_mcu_id">Please enter the NodeMCU id:</string>
     <string name="mcu_id">NodeMCU id</string>
     <string name="edit_details">Edit User Details used by NodeMCU</string>
+    <string name="emergency_contact_1">Emergency Contact 1</string>
+    <string name="emergency_contact_2">Emergency Contact 2</string>
 
 </resources>

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.apps.kunalfarmah.Spo2Watcher.databinding.ActivityDetailsBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -25,6 +26,7 @@ class DetailsActivity : AppCompatActivity() {
     lateinit var detailPrefs:SharedPreferences
     lateinit var sharedPreferences: SharedPreferences
     var isEdit:Boolean = false
+    var redirect: Boolean =false
 
      companion object {
          val DETAILS = "DETAILS"
@@ -42,6 +44,14 @@ class DetailsActivity : AppCompatActivity() {
         binding = ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         isEdit = intent.extras!!.getBoolean("editing",false)
+        redirect = intent.extras!!.getBoolean("redirect",false)
+
+        if(redirect){
+            binding.mcuLayout.visibility = View.GONE
+        }
+        else{
+            binding.mcuLayout.visibility = View.VISIBLE
+        }
         userID = FirebaseAuth.getInstance().uid!!
         db = FirebaseDatabase.getInstance()
 
@@ -79,7 +89,7 @@ class DetailsActivity : AppCompatActivity() {
             eph2 = binding.emergencyphone2Et.text.toString()
             mcuId = binding.mcuEt.text.toString()
 
-            if(mcuId.isEmpty()){
+            if(!redirect && mcuId.isEmpty()){
                 Toast.makeText(applicationContext,"Please Enter NodeMCU id",Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -101,13 +111,15 @@ class DetailsActivity : AppCompatActivity() {
             userRef.setValue(user)
             userEmergencyRef.setValue(emergency)
 
+            if(redirect) {
+                finish()
+                return@setOnClickListener
+            }
             var intent = Intent(this,ArduinoActivity::class.java)
             intent.putExtra("id",getSharedPreferences(NODE_MCU, MODE_PRIVATE).getString(MCUID,""))
             this.finish()
             if(!isEdit)
                 startActivity(intent)
-
-
         }
 
 

@@ -87,6 +87,14 @@ public class RecordVitalSigns extends AppCompatActivity {
         setContentView(R.layout.activity_record_vital_signs);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
+        // abnormal readings test case
+/*        Intent i = new Intent(RecordVitalSigns.this, VitalSignsResults.class);
+            i.putExtra("O2R", 92);
+            i.putExtra("bpm", 60);
+            i.putExtra("Usr", user);
+            startActivity(i);
+            finish();*/
+
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             user = extras.getString("Usr");

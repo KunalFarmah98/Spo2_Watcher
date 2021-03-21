@@ -31,6 +31,7 @@ public class SplashActivity extends AppCompatActivity {
             "android.permission.WAKE_LOCK",
             "android.permission.ACCESS_NETWORK_STATE",
             "android.permission.READ_SMS",
+            "android.permission.SEND_SMS",
             "android.permission.RECEIVE_SMS",
             "android.permission.CALL_PHONE",
             "android.permission.ACCESS_WIFI_STATE"
