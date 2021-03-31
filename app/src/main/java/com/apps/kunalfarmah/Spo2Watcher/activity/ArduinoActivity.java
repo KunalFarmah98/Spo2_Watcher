@@ -1,6 +1,7 @@
 package com.apps.kunalfarmah.Spo2Watcher.activity;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,19 +13,23 @@ import android.widget.TextView;
 
 import com.apps.kunalfarmah.Spo2Watcher.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
+
 public class ArduinoActivity extends AppCompatActivity {
 
     private LinearLayout data, waiting;
-    private DatabaseReference oxymeterRef, hrRef, spo2Ref;
+    private DatabaseReference oxymeterRef, hrRef, spo2Ref, vitals;
     private TextView hr, spo2;
     private CountDownTimer timer;
     private ValueEventListener hrListener, spo2Listener;
+    private ChildEventListener vitalsListener;
     private String id;
 
     @Override
@@ -52,16 +57,18 @@ public class ArduinoActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 Intent i = new Intent(ArduinoActivity.this, VitalSignsResults.class);
-                i.putExtra("O2R", spo2.getText().toString());
-                i.putExtra("bpm", hr.getText().toString());
+                i.putExtra("O2R", Integer.parseInt(spo2.getText().toString()));
+                i.putExtra("bpm", Integer.parseInt(hr.getText().toString()));
                 i.putExtra("Usr", FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
+                i.putExtra("updateDB",false);
                 startActivity(i);
                 finish();
             }
         };
         oxymeterRef = FirebaseDatabase.getInstance().getReference().child("sensors").child(id).child("pulse_oximeter").child("vitals");
-        hrRef = oxymeterRef.child("hr");
-        hrListener  = (new ValueEventListener() {
+//        hrRef = oxymeterRef.child("hr");
+        vitals = oxymeterRef;
+        /*hrListener  = (new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -95,7 +102,42 @@ public class ArduinoActivity extends AppCompatActivity {
         });
 
         hrRef.addValueEventListener(hrListener);
-        spo2Ref.addValueEventListener(spo2Listener);
+        spo2Ref.addValueEventListener(spo2Listener);*/
+
+        vitals.addChildEventListener(vitalsListener = new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                waiting.setVisibility(View.GONE);
+                data.setVisibility(View.VISIBLE);
+                String[] vals = Objects.requireNonNull(snapshot.getValue(String.class)).split(" ");
+                if(!vals[0].equals("0") && !vals[1].equals("0")) {
+                    hr.setText(vals[0]);
+                    spo2.setText(vals[1]);
+                }
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        timer.start();
 
 
 
@@ -105,7 +147,8 @@ public class ArduinoActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         timer.cancel();
-        hrRef.removeEventListener(hrListener);
-        spo2Ref.removeEventListener(spo2Listener);
+//        hrRef.removeEventListener(hrListener);
+//        spo2Ref.removeEventListener(spo2Listener);
+        vitals.removeEventListener(vitalsListener);
     }
 }

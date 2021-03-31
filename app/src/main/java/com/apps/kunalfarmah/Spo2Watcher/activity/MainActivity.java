@@ -49,10 +49,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    static String hr,os;
-
-    int i = 0;
-
     static boolean isDoctor = false;
     ArrayList<PatientSigns> listSigns = new ArrayList<>();
 
@@ -105,8 +101,6 @@ public class MainActivity extends AppCompatActivity {
 
             final List<Entry> HRentries = new ArrayList<Entry>();
             final List<Entry> OSentries = new ArrayList<Entry>();
-
-
 
 
             mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -190,22 +184,20 @@ public class MainActivity extends AppCompatActivity {
             mDatabase.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
+                    HRentries.clear();
+                    OSentries.clear();
+                    listSigns = new ArrayList<>();
                     for (DataSnapshot vitals : dataSnapshot.getChildren()) {
                         Log.d("data", "onDataChange: " + vitals.toString());
                         PatientSigns signs = vitals.getValue(PatientSigns.class);
                         listSigns.add(signs);
 
-                        hr = String.valueOf(listSigns.get(0).getHeartRate());
-                        os = String.valueOf(listSigns.get(0).getOxygenSaturation());
-
-
+                        int i = HRentries.size();
                         Log.i("retrieved: ", Integer.toString(listSigns.get(i).getHeartRate()));
-                        HRentries.add(new Entry(1 + i, listSigns.get(i).getHeartRate()));
-                        OSentries.add(new Entry(1 + i, listSigns.get(i).getOxygenSaturation()));
+                        HRentries.add(new Entry(i,listSigns.get(i).getHeartRate()));
+                        OSentries.add(new Entry(i, listSigns.get(i).getOxygenSaturation()));
                         //Log.d("class", "onDataChange: "+signs.getDiastolic());
                         //Log.d("entries retrieved", "onDataChange: "+HRentries.get(i).getY());
-                        i = i + 1;
 
                         LineDataSet dataSet1 = new LineDataSet(HRentries, "Beats per minute"); // add entries to dataset
                         dataSet1.setColor(R.color.maroon);
@@ -270,10 +262,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-
-    int scaleBetween(int unscaledNum, int minAllowed, int maxAllowed, int min, int max) {
-        return (maxAllowed - minAllowed) * (unscaledNum - min) / (max - min) + minAllowed;
     }
 }

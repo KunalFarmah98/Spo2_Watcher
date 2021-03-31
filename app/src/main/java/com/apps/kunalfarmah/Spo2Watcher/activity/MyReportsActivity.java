@@ -69,7 +69,7 @@ public class MyReportsActivity extends AppCompatActivity {
                 list.sort(new Comparator<PatientSigns>() {
                     @Override
                     public int compare(PatientSigns o1, PatientSigns o2) {
-                        return (int) (o2.getTimestamp() - o1.getTimestamp());
+                        return Long.compare(o2.getTimestamp(),o1.getTimestamp());
                     }
                 });
                 mAdapter = new ResultsAdapter(getApplicationContext(), list);

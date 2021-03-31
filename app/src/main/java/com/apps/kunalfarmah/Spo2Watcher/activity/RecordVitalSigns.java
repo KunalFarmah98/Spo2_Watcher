@@ -353,6 +353,7 @@ public class RecordVitalSigns extends AppCompatActivity {
                 i.putExtra("O2R", o2);
                 i.putExtra("bpm", Beats);
                 i.putExtra("Usr", user);
+                i.putExtra("updateDB",true);
                 startActivity(i);
                 finish();
             }

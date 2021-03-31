@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".activity.ArduinoActivity">
 
@@ -49,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="90 BPM"
-                android:textColor="@color/black"
+                android:textColor="#000000"
                 android:textSize="28sp" />
 
 
@@ -78,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="98%"
-                android:textColor="@color/black"
+                android:textColor="#000000"
                 android:textSize="28sp" />
         </LinearLayout>
     </LinearLayout>
@@ -117,7 +118,7 @@
         android:layout_marginBottom="30dp"
         android:gravity="center"
         android:text="Please keep your finger on the sensor for atleast 10 seconds"
-        android:textColor="@color/black"
+        android:textColor="#000000"
         android:textSize="20sp" />
 
 

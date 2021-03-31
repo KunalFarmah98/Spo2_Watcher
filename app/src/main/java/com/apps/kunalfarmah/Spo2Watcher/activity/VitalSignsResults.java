@@ -37,6 +37,7 @@ public class VitalSignsResults extends AppCompatActivity {
     java.util.Date today = Calendar.getInstance().getTime();
     int VBP1, VBP2, VRR, VHR, VO2;
     SharedPreferences sPref, sPref1, sPref2, detailPrefs;
+    boolean updateDb;
 
     ArrayList<CautiousVitalSigns> caution = new ArrayList<>();
     RecyclerView recyclerView;
@@ -63,6 +64,7 @@ public class VitalSignsResults extends AppCompatActivity {
             VRR = bundle.getInt("breath");
             VHR = bundle.getInt("bpm");
             VO2 = bundle.getInt("O2R");
+            updateDb = bundle.getBoolean("updateDB",true);
 
             SharedPreferences.Editor editor = sPref.edit();
             editor.clear();
@@ -73,13 +75,15 @@ public class VitalSignsResults extends AppCompatActivity {
 
             Log.i("MyLogs", Objects.requireNonNull(FirebaseAuth.getInstance().getUid()));
 
-            FirebaseDatabase.getInstance().getReference()
-                    .child("userbase")
-                    .child("patients")
-                    .child(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
-                    .child("vitals")
-                    .push()
-                    .setValue(new PatientSigns(VHR, VO2));
+            if(updateDb) {
+                FirebaseDatabase.getInstance().getReference()
+                        .child("userbase")
+                        .child("patients")
+                        .child(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
+                        .child("vitals")
+                        .push()
+                        .setValue(new PatientSigns(VHR, VO2));
+            }
 
             user = bundle.getString("Usr");
             VSHR.setText(String.valueOf(VHR));
@@ -159,7 +163,7 @@ public class VitalSignsResults extends AppCompatActivity {
     }
 
     void sendSOS(){
-        String msg = String.format("Your contact %s: %s has got abnormal vital signs measured with Heart Rate = %s and SPO2 = %s \n You are receiving this message because they have listed you as an emergency contact while using SPO2 Watcher App."
+        String msg = String.format("Your contact %s: %s has got abnormal vital signs measured with Heart Rate = %s and SPO2 = %s \nYou are receiving this message because they have listed you as an emergency contact while using SPO2 Watcher App."
                 , detailPrefs.getString("NAME",""), detailPrefs.getString("CONTACT",""), VHR,VO2);
         String eph1 = "+91"+detailPrefs.getString("EPH1","");
         String eph2 = "+91"+detailPrefs.getString("EPH2","");
