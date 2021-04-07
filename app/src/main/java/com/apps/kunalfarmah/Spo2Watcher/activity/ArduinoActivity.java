@@ -41,6 +41,8 @@ public class ArduinoActivity extends AppCompatActivity {
         hr = findViewById(R.id.hr);
         spo2 = findViewById(R.id.spo2);
         id = getIntent().getStringExtra("id");
+        oxymeterRef = FirebaseDatabase.getInstance().getReference().child("sensors").child(id).child("pulse_oximeter").child("vitals");
+        vitals = oxymeterRef;
         //abnormal readings test case
        /*        Intent i = new Intent(RecordVitalSigns.this, VitalSignsResults.class);
             i.putExtra("O2R", 92);
@@ -51,7 +53,6 @@ public class ArduinoActivity extends AppCompatActivity {
         timer = new CountDownTimer(10000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-
             }
 
             @Override
@@ -65,9 +66,7 @@ public class ArduinoActivity extends AppCompatActivity {
                 finish();
             }
         };
-        oxymeterRef = FirebaseDatabase.getInstance().getReference().child("sensors").child(id).child("pulse_oximeter").child("vitals");
 //        hrRef = oxymeterRef.child("hr");
-        vitals = oxymeterRef;
         /*hrListener  = (new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
