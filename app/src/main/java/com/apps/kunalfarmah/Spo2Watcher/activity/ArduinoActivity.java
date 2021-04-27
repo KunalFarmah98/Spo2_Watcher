@@ -50,7 +50,7 @@ public class ArduinoActivity extends AppCompatActivity {
             i.putExtra("Usr", user);
             startActivity(i);
             finish();*/
-        timer = new CountDownTimer(10000, 1000) {
+        timer = new CountDownTimer(20000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
             }
@@ -61,7 +61,7 @@ public class ArduinoActivity extends AppCompatActivity {
                 i.putExtra("O2R", Integer.parseInt(spo2.getText().toString()));
                 i.putExtra("bpm", Integer.parseInt(hr.getText().toString()));
                 i.putExtra("Usr", FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
-                i.putExtra("updateDB",false);
+                i.putExtra("updateDB",true);
                 startActivity(i);
                 finish();
             }
@@ -110,8 +110,8 @@ public class ArduinoActivity extends AppCompatActivity {
                 data.setVisibility(View.VISIBLE);
                 String[] vals = Objects.requireNonNull(snapshot.getValue(String.class)).split(" ");
                 if(!vals[0].equals("0") && !vals[1].equals("0")) {
-                    hr.setText(vals[0]);
-                    spo2.setText(vals[1]);
+                    hr.setText(vals[0].substring(0,2));
+                    spo2.setText(vals[1].substring(0,2));
                 }
             }
 
