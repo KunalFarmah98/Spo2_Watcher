@@ -10,6 +10,7 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.apps.kunalfarmah.Spo2Watcher.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,6 +32,7 @@ public class ArduinoActivity extends AppCompatActivity {
     private ValueEventListener hrListener, spo2Listener;
     private ChildEventListener vitalsListener;
     private String id;
+    private boolean reading=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,11 +59,17 @@ public class ArduinoActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
+                if(!reading){
+                    Toast.makeText(ArduinoActivity.this,"Finger not detected on the sensor. Please Try Again",Toast.LENGTH_SHORT).show();
+                    finish();
+                    return;
+                }
                 Intent i = new Intent(ArduinoActivity.this, VitalSignsResults.class);
                 i.putExtra("O2R", Integer.parseInt(spo2.getText().toString()));
                 i.putExtra("bpm", Integer.parseInt(hr.getText().toString()));
                 i.putExtra("Usr", FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
                 i.putExtra("updateDB",true);
+                vitals.removeValue();
                 startActivity(i);
                 finish();
             }
@@ -110,6 +118,7 @@ public class ArduinoActivity extends AppCompatActivity {
                 data.setVisibility(View.VISIBLE);
                 String[] vals = Objects.requireNonNull(snapshot.getValue(String.class)).split(" ");
                 if(!vals[0].equals("0") && !vals[1].equals("0")) {
+                    reading=true;
                     hr.setText(vals[0].substring(0,2));
                     spo2.setText(vals[1].substring(0,2));
                 }
