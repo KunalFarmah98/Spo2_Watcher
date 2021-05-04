@@ -14,6 +14,8 @@ This app brings the feature fo testing Vital Signs namely, Blood Pressure, Heart
 * It shoots a video of 30 seconds, then analyses it frame by frame to match the perfect orientation of the images and selects the best image 
 and calculates the required results using Image Processing, Bessel function and Fast Fourier Transform and much more complex functions.
 
+* Looks for a certain threshold of RGB light intensities, and straightawy gives error asking user to try again, hence reducing chances of mis calculation of vitals and giving false alarms.
+
 * Has a dual login feature: Allowing both users and doctors to interact with each other.
 
 <p align = "center">
