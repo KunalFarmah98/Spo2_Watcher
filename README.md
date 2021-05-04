@@ -1,4 +1,6 @@
-# SPO2 Wacther - A  PPG based Remote Covid-19 patient monitoring app:
+# SPO2 Wacther - A  PPG based Oxymeter and Heart Rate Sensor
+
+## Part of Research Paper titled: "A Novel Patient Moniorting System in the age of COvid-19 using Photoplethysmography and IOT" accepted in ICCMC 2021 and to be puplished in IEEE Explore.
 
 #### Nowadays healthcare has become an important factor for a developing country to keep up with the pther countries.
 This app brings the feature fo testing Vital Signs namely, Blood Pressure, Heart Rate, Oxygen Saturation as well as Respiration Rate to a simple android application in which just u need is to put ur index finger on the camera and its done using Photoplethysmography.
@@ -36,15 +38,15 @@ and calculates the required results using Image Processing, Bessel function and 
 10. Emergency contacts get notified via SMS if Spo2 stays below 93% consistently.
 
 <p align = "center">
-    <img hspace= "20" src="https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/dashboard.jpeg" width = "190" height = "320">
+  <img hspace= "20" src="https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/dashboard.jpeg" width = "190" height = "320">
   <img hspace= "20" src="https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/measure_options.jpeg" width = "190" height = "320">
   <img hspace= "20" src="https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/ppg.jpeg" width = "190" height = "320">
   <img hspace= "20" src="https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/iot.jpeg" width = "190" height = "320">
-    <img hspace= "20" src="https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/result.jpeg" width = "190" height = "320">
+  <img hspace= "20" src="https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/result.jpeg" width = "190" height = "320">
   <img hspace= "20" src="https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/alert.jpeg" width = "190" height = "320">
-   <img hspace= "20" src="https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/appointment.jpeg" width = "190" height = "320">
+  <img hspace= "20" src="https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/appointment.jpeg" width = "190" height = "320">
   <img hspace= "20" src="https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/chat.jpeg" width = "190" height = "320">
-    <img hspace= "20" src="https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/help.jpeg" width = "190" height = "320">
+  <img hspace= "20" src="https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/help.jpeg" width = "190" height = "320">
   <img hspace= "20" src="https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/reports.jpeg" width = "190" height = "320">
   <img hspace= "20" src="https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/doctors.jpeg" width = "190" height = "320">
 
