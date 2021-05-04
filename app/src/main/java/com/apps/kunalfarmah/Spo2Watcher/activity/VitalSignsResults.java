@@ -112,7 +112,7 @@ public class VitalSignsResults extends AppCompatActivity {
         hr = (((hr - minHr) / (maxHr - minHr)) * 2) - 1;
         String[] args = {String.valueOf(spo2), String.valueOf(hr)};
         // TODO:  put model here
-        if (VO2 < 94) {
+        if (VO2 < 93) {
             int count = sPref1.getInt("Count", 0);
             ++count;
             if (count >= 2) {
