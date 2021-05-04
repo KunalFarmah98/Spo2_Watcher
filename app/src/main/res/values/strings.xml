@@ -16,7 +16,7 @@
     <string name="oxy">Oxygen saturation is the fraction of [oxygen]-saturated hemoglobin relative to total hemoglobin (unsaturated + saturated) in the blood. The human body requires and regulates a very precise and specific balance of oxygen in the blood. </string>
 
     <string name="resp">The respiratory rate is the rate at which breathing occurs. This is usually measured in breaths per minute and is set, and controlled by the respiratory centre.</string>
-    <string name="title_activity_doctor">Health++</string>
+    <string name="title_activity_doctor">Spo2 Watcher</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>

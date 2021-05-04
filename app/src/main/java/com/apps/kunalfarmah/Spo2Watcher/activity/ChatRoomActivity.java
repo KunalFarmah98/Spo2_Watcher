@@ -111,7 +111,8 @@ public class ChatRoomActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat_room);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDefaultDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeButtonEnabled(true);
 
         myUid = FirebaseAuth.getInstance().getUid();
         userUid = getIntent().getStringExtra("user_uid");
@@ -399,6 +400,12 @@ public class ChatRoomActivity extends AppCompatActivity {
                     }
                 });
 
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return super.onSupportNavigateUp();
     }
 }
 
