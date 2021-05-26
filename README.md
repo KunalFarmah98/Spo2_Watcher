@@ -1,6 +1,6 @@
 # SPO2 Wacther - A  PPG based Oxymeter and Heart Rate Sensor
 
-## Part of Research Paper titled: "A Novel Patient Moniorting System in the age of COvid-19 using Photoplethysmography and IOT" accepted in ICCMC 2021 and to be puplished in IEEE Explore.
+## Part of Research Paper titled: "A Novel Patient Moniorting System in the age of Covid-19 using Photoplethysmography and IOT" accepted in ICCMC 2021 and published in IEEE Explore. DOI:10.1109/ICCMC51019.2021.9418426
 
 #### Nowadays healthcare has become an important factor for a developing country to keep up with the pther countries.
 This app brings the feature fo testing Vital Signs namely, Blood Pressure, Heart Rate, Oxygen Saturation as well as Respiration Rate to a simple android application in which just u need is to put ur index finger on the camera and its done using Photoplethysmography.
