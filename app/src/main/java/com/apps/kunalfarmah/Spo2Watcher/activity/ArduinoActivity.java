@@ -52,7 +52,7 @@ public class ArduinoActivity extends AppCompatActivity {
             i.putExtra("Usr", user);
             startActivity(i);
             finish();*/
-        timer = new CountDownTimer(20000, 1000) {
+        timer = new CountDownTimer(25000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
             }
@@ -119,8 +119,8 @@ public class ArduinoActivity extends AppCompatActivity {
                 String[] vals = Objects.requireNonNull(snapshot.getValue(String.class)).split(" ");
                 if(!vals[0].equals("0") && !vals[1].equals("0")) {
                     reading=true;
-                    hr.setText(vals[0].substring(0,2));
-                    spo2.setText(vals[1].substring(0,2));
+                    hr.setText(vals[0].substring(0,vals[0].indexOf('.')));
+                    spo2.setText(vals[1].substring(0,vals[1].indexOf('.')));
                 }
             }
 
