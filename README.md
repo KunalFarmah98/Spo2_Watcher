@@ -1,4 +1,4 @@
-# SPO2 Wacther - A  PPG based Oxymeter and Heart Rate Sensor
+# SPO2 Watcher - A  PPG based Oxymeter and Heart Rate Sensor
 
 ## Part of Research Paper titled: "A Novel Patient Moniorting System in the age of Covid-19 using Photoplethysmography and IOT" accepted in ICCMC 2021 and published in IEEE Explore. DOI:10.1109/ICCMC51019.2021.9418426
 
