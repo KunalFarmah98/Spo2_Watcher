@@ -5,7 +5,6 @@
 ## # This is a prototype application that is itself forked from an open source project using Photoplethysmography to support a research Paper.
 ## # This application can not detect or prevent any health conditions related to vital signs.
 ## # This application MUST NOT be used as a substitute for medical devices for measurement of vital signs or for detecting any health conditions.
-## # The .apk files shared in this project were built in 2021 targeting the common Android versions at that time, the same builds may not work correctly or be stable in latest versions of android.
 #
 
 ## Part of Research Paper titled: "A Novel Patient Monitoring System in the age of Covid-19 using Photoplethysmography and IOT" accepted and published in ICCMC 2021 and available in IEEE Explore.
