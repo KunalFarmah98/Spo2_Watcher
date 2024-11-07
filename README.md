@@ -1,8 +1,14 @@
 # SPO2 Watcher - A  PPG based Oximeter and Heart Rate Sensor
 
-## Part of Research Paper titled: "A Novel Patient Monitoring System in the age of Covid-19 using Photoplethysmography and IOT" accepted and published in ICCMC 2021 and available in IEEE Explore.
+#
+## IMPORTANT NOTE:
+## # This is a prototype application that is itself forked from an open source project using Photoplethysmography to support a research Paper.
+## # This application can not detect or prevent any health conditions related to vital signs.
+## # This application MUST NOT be used as a substitute for medical devices for measurement of vital signs or for detecting any health conditions.
+## # The .apk files shared in this project were built in 2021 targeting the common Android versions at that time, the same builds may not work correctly or be stable in latest versions of android.
+#
 
-### <https://ieeexplore.ieee.org/document/9418426>
+## Part of Research Paper titled: "A Novel Patient Monitoring System in the age of Covid-19 using Photoplethysmography and IOT" accepted and published in ICCMC 2021 and available in IEEE Explore.
 
 #### Nowadays healthcare has become an important factor for a developing country to keep up with the pther countries.
 This app brings the feature fo testing Vital Signs namely, Blood Pressure, Heart Rate, Oxygen Saturation as well as Respiration Rate to a simple android application in which just u need is to put ur index finger on the camera and its done using Photoplethysmography.
@@ -68,10 +74,3 @@ and calculates the required results using Image Processing, Bessel function and 
   <img hspace= "20" src="https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/doc_chat.jpeg" width = "190" height = "320">
   <img hspace= "20" src="https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/doc_patients.jpeg" width = "190" height = "320">
 </p>
-
-#
-## IMPORTANT NOTE:
-## This is a prototype application that is itself forked from an open source project using Photoplethysmography to support the above research Paper.
-## This application can not detect or prevent any health conditions related to vital signs.
-## This application MUST NOT be used as a substitute for medical devices for measurement of vital signs or for detecting any health conditions.
-## The .apk files shared in this project were built in 2021 targeting the common Android versions at that time, the same builds may not work correctly or be stable in latest versions of android.
