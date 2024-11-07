@@ -1,6 +1,6 @@
 # SPO2 Watcher - A  PPG based Oximeter and Heart Rate Sensor
 
-## Part of Research Paper titled: "A Novel Patient Moniorting System in the age of Covid-19 using Photoplethysmography and IOT" accepted and published in ICCMC 2021 and available in IEEE Explore.
+## Part of Research Paper titled: "A Novel Patient Monitoring System in the age of Covid-19 using Photoplethysmography and IOT" accepted and published in ICCMC 2021 and available in IEEE Explore.
 ### DOI: 10.1109/ICCMC51019.2021.9418426
 
 ### <https://ieeexplore.ieee.org/document/9418426>
