@@ -1,7 +1,6 @@
 # SPO2 Watcher - A  PPG based Oximeter and Heart Rate Sensor
 
 ## Part of Research Paper titled: "A Novel Patient Monitoring System in the age of Covid-19 using Photoplethysmography and IOT" accepted and published in ICCMC 2021 and available in IEEE Explore.
-### DOI: 10.1109/ICCMC51019.2021.9418426
 
 ### <https://ieeexplore.ieee.org/document/9418426>
 
@@ -69,3 +68,9 @@ and calculates the required results using Image Processing, Bessel function and 
   <img hspace= "20" src="https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/doc_chat.jpeg" width = "190" height = "320">
   <img hspace= "20" src="https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/doc_patients.jpeg" width = "190" height = "320">
 </p>
+
+#
+## IMPORTANT NOTE:
+## This is a prototype application that is itself forked from an open source project using Photoplethysmography to support the above research Paper.
+## This application can not detect or prevent any health conditions related to vital signs.
+## This application MUST NOT be used as a substitute for medical devices for measurement of vital signs or for detecting any health conditions.
