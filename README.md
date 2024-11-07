@@ -1,13 +1,12 @@
 # SPO2 Watcher - A  PPG based Oximeter and Heart Rate Sensor
 
-#
 ## IMPORTANT NOTE:
 ## # This is a prototype application that is itself forked from an open source project using Photoplethysmography to support a research Paper.
 ## # This application can not detect or prevent any health conditions related to vital signs.
 ## # This application MUST NOT be used as a substitute for medical devices for measurement of vital signs or for detecting any health conditions.
-#
 
-## Part of Research Paper titled: "A Novel Patient Monitoring System in the age of Covid-19 using Photoplethysmography and IOT" accepted and published in ICCMC 2021 and available in IEEE Explore.
+## Part of Research Paper titled: "A Novel Patient Monitoring System in the age of Covid-19 using Photoplethysmography and IOT" accepted and published in ICCMC 2021 and available in IEEE Explore. https://ieeexplore.ieee.org/document/9418426
+#
 
 #### Nowadays healthcare has become an important factor for a developing country to keep up with the pther countries.
 This app brings the feature fo testing Vital Signs namely, Blood Pressure, Heart Rate, Oxygen Saturation as well as Respiration Rate to a simple android application in which just u need is to put ur index finger on the camera and its done using Photoplethysmography.
