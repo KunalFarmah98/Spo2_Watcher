@@ -69,7 +69,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:17.2.3'
 
     //fabulus filter
-    implementation 'com.allattentionhere:fabulousfilter:0.0.4'
+    implementation 'io.github.krupen:fabulousfilter:0.0.6'
 
     // Anko
     implementation "org.jetbrains.anko:anko:0.10.3"
