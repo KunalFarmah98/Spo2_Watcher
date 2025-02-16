@@ -72,3 +72,9 @@ and calculates the required results using Image Processing, Bessel function and 
   <img hspace= "20" src="https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/doc_chat.jpeg" width = "190" height = "320">
   <img hspace= "20" src="https://github.com/KunalFarmah98/Spo2_Watcher/blob/master/app/src/main/res/raw/doc_patients.jpeg" width = "190" height = "320">
 </p>
+
+## NOTE:
+#### This was a college project as part of a research paper.
+#### This project is no longer maintained.
+#### The database and authentication servers have been shut down.
+#### All accounts and their data has been securely deleted.
